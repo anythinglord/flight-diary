@@ -1,34 +1,27 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { Card } from './components/Card/Card'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [diaries, _] = useState([
+    {
+      id: 1, date: '2024-10-14', weather: 'Sunny', visibility: 'Excelent',
+      comment: 'Perfect day for flying. Clear skies and smooth air.'
+    },
+    {
+      id: 2, date: '2024-10-14', weather: 'Sunny', visibility: 'Excelent',
+      comment: 'Perfect day for flying. Clear skies and smooth air.'
+    },
+  ])
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <h1>Flight Diary</h1>
+      <button>Add Entry</button>
+      {diaries.map(({ date, weather, visibility, comment }) => (
+        <Card date={date} weather={weather} visibility={visibility} comment={comment} />
+      ))}
+    </div>
   )
 }
 

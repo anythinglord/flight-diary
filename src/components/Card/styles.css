@@ -1,0 +1,14 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 15px 0 15px 0;
+}
+
+.card-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
