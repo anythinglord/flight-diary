@@ -11,7 +11,7 @@ interface Props {
 export const Card = ({ date, weather, visibility, comment }: Props) => {
     return(
         <div className="card">
-            <div className="card-date">
+            <div className="flex-row">
                 <div className="icon-text">
                     <i className="fa-regular fa-calendar"/>
                     {date}
